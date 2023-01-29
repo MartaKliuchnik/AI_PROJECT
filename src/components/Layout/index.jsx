@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 
 export default function Layout() {
     return (
-        <div className={s.wrapper}>
+        <div className={[s.wrapper, 'wrapper'].join(' ')}>
 			<NavMenu />
 			<div className={s.content}>
 				<Outlet />

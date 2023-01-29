@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import s from './style.module.sass';
 
-export default function FormInput(props) {
+export default forwardRef (function FormInput(props, ref) {
     return (
-        <input {...props} className={s.form_input} />
+        <input ref={ref} {...props} className={s.form_input} />
     )
-}
+})

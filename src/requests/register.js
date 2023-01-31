@@ -1,10 +1,7 @@
-import { info_user } from '../requests/info';
-import { token_refresh } from './token_refresh';
+export const register = (auth_data, callback, err_callback = console.log) => {
+    console.log('Process - Register');
 
-export const login = (auth_data, callback, err_callback = console.log) => {
-    // console.log('Process - Login')
-
-    fetch('http://localhost:8000/api/token/', {
+    fetch('http://localhost:8000/api/register/', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -19,10 +16,7 @@ export const login = (auth_data, callback, err_callback = console.log) => {
             throw new Error(`${res.statusText}`)
         }
     }).then(
-        data => {
-            callback(data);
-            token_refresh(data);
-        },
+        data => callback(data),
         err => err_callback(err.message)
     );
 }

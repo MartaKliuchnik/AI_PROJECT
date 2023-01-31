@@ -1,4 +1,5 @@
-export const LOGIN_TOKEN_NAME = 'login_token';
+export const AUTH_TOKEN_REFRESH = 'auth_refresh';
+export const AUTH_TOKEN_ACCESS = 'auth_access';
 
 export const string2array = (string) =>
     string.split('; ').map(elem => elem.split('='));
@@ -6,13 +7,14 @@ export const string2array = (string) =>
 // export const array2string = (array) => 
 //     array.map(elem => elem.join('=')).join('; ')
 
-export const setCookie = (key, value) => {
-    // return array2string([...string2array(document.cookie), [key, value]])
-    document.cookie = `${key} = ${value}`;
+export const setCookie = (key_refresh, value_refresh, key_access, value_access) => {
+    document.cookie = `${key_refresh} = ${value_refresh}`;
+    document.cookie = `${key_access} = ${value_access}`;
 } 
 
-export const deleteCookie = (key) => {
-    document.cookie = `${key}=${-1}`;
+export const deleteCookie = (key_refresh, key_access) => {
+    document.cookie = `${key_refresh}=${-1}`;
+    document.cookie = `${key_access}=${-1}`;
 }
 
 export const findCookie = (key) => {

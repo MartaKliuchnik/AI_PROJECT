@@ -1,3 +1,5 @@
+import { check_register } from "./check_register";
+
 export const register = (auth_data, callback, err_callback = console.log) => {
     console.log('Process - Register');
 
@@ -16,7 +18,10 @@ export const register = (auth_data, callback, err_callback = console.log) => {
             throw new Error(`${res.statusText}`)
         }
     }).then(
-        data => callback(data),
+        data => {
+            console.log(data);
+            callback(data);
+        },
         err => err_callback(err.message)
     );
 }

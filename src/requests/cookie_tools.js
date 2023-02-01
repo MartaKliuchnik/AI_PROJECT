@@ -1,5 +1,5 @@
-export const AUTH_TOKEN_REFRESH = 'auth_refresh';
-export const AUTH_TOKEN_ACCESS = 'auth_access';
+export const AUTH_TOKEN_REFRESH = 'refresh';
+export const AUTH_TOKEN_ACCESS = 'access';
 
 export const string2array = (string) =>
     string.split('; ').map(elem => elem.split('='));
@@ -17,7 +17,15 @@ export const deleteCookie = (key_refresh, key_access) => {
     document.cookie = `${key_access}=${-1}`;
 }
 
-export const findCookie = (key) => {
-    const result = string2array(document.cookie).find(c => c[0] === key);
-    return (result && result[1] !== '-1') ? result[1] : undefined
+export const findCookie = () => {
+    const result_access = string2array(document.cookie).find(c => c[0] === 'access');
+    const result_refresh = string2array(document.cookie).find(c => c[0] === 'refresh');
+    
+    const auth_token_from_cookies = {
+        access: (result_access && result_access[1] !== '-1') ? result_access[1] : undefined,
+        refresh: (result_refresh && result_refresh[1] !== '-1') ? result_refresh[1] : undefined
+    }
+
+    console.log(auth_token_from_cookies)
+    return auth_token_from_cookies
 }

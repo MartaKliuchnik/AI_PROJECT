@@ -1,21 +1,25 @@
-import { info_user } from "./info";
+import { check_register } from "./check_register";
+import { setCookie, AUTH_TOKEN_ACCESS, AUTH_TOKEN_REFRESH } from '../requests/cookie_tools';
 
-export const token_refresh = (auth_refresh) => {
-    console.log(auth_refresh);
+// export const token_refresh = (auth_refresh) => {
+export const token_refresh = (token) => {
+    console.log(token);
+    
     fetch('http://localhost:8000/api/token_refresh/', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(auth_refresh)
+        body: JSON.stringify(token)
     }).then(res => {
-        res.headers[Headers] = { 'Authorization': `Token ${auth_refresh.access}` }
         console.log(res);
-        // info_user(auth_refresh);
         return res.json()
-    })
-        .then(
-            data => console.log(data)
-        )
+    }).then(
+        data => {
+            console.log(data);
+            setCookie(AUTH_TOKEN_REFRESH, data.refresh, AUTH_TOKEN_ACCESS, data.access);
+            // check_register(data)
+        }
+    )
 }

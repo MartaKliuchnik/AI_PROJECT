@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Link } from 'react-router-dom';
 import FormButton from '../UI/FormButton';
 import FormInput from '../UI/FormInput';
@@ -6,11 +6,14 @@ import s from './style.module.sass';
 import { login } from '../../requests/login';
 import { register } from '../../requests/register';
 import { setCookie, AUTH_TOKEN_ACCESS, AUTH_TOKEN_REFRESH } from '../../requests/cookie_tools';
+import { Context } from '../../context';
 
 
 export default function FormItem({ title, button, btn_link }) {
     const [message, setMessage] = useState('Specify authentication data');
-
+    const { setIsLogin } = useContext(Context);
+    
+    
     const submit = (event) => {
         event.preventDefault();
         const { email, password } = event.target;
@@ -29,9 +32,11 @@ export default function FormItem({ title, button, btn_link }) {
                     setMessage('Ok!');
                     password.value = '';
                     email.value = '';
+                    setIsLogin(true);
                 },
                 setMessage
             );
+            
 
         } else if (button.submit === 'Registration') {
             // console.log('Register');
@@ -42,6 +47,7 @@ export default function FormItem({ title, button, btn_link }) {
                     setMessage('Ok! User registered!');
                     password.value = '';
                     email.value = '';
+                    setIsLogin(true);
                 },
                 setMessage
             );

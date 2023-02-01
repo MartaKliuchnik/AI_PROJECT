@@ -1,13 +1,21 @@
+import {useState} from 'react';
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout";
 import WelcomePage from '../../pages/WelcomePage';
 import MainPage from '../../pages/MainPage';
 import LoginPage from "../../pages/LoginPage";
 import RegistrationPage from "../../pages/RegistrationPage";
+import { Context } from '../../context';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
+
   return (
-    <>
+    <Context.Provider value={{
+      isLogin,
+      setIsLogin
+    }}>
+      
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<WelcomePage/>} />
@@ -16,7 +24,8 @@ function App() {
           <Route path='/main' element={<MainPage />} />
         </Route>
       </Routes>
-    </>
+
+    </Context.Provider>
   );
 }
 

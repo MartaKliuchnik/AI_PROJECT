@@ -1,5 +1,4 @@
-import { info_user } from '../requests/info';
-import { token_refresh } from './token_refresh';
+import { check_register } from "./check_register";
 
 export const login = (auth_data, callback, err_callback = console.log) => {
     // console.log('Process - Login')
@@ -20,8 +19,8 @@ export const login = (auth_data, callback, err_callback = console.log) => {
         }
     }).then(
         data => {
+            console.log(data)
             callback(data);
-            token_refresh(data);
         },
         err => err_callback(err.message)
     );

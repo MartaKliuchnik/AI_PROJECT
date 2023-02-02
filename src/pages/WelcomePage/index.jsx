@@ -1,7 +1,10 @@
 import React from 'react'
+import WelcomText from '../../components/WelcomText'
 
 export default function WelcomePage() {
     return (
-        <div>WelcomePage</div>
+        <div>
+            <WelcomText />
+        </div>
     )
 }

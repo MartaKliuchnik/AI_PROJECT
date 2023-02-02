@@ -21,7 +21,11 @@ export const login = (auth_data, callback, err_callback = console.log) => {
         data => {
             console.log(data)
             callback(data);
+            return true
         },
-        err => err_callback(err.message)
+        err => {
+            err_callback(err.message);
+            return false
+        }
     );
 }

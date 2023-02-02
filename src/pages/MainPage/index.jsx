@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CheckRegisterButton from '../../components/UI/CheckRegisterButton';
 import FormInput from '../../components/UI/FormInput';
 import s from './style.module.sass';
 import {check_register} from '../../requests/check_register'
 import { findCookie } from '../../requests/cookie_tools';
+import { Context } from '../../context';
 
 export default function MainPage() {
+    const { setIsLogin } = useContext(Context);
 
     const submit = event => {
         event.preventDefault();
@@ -13,6 +15,7 @@ export default function MainPage() {
         check_register(
             findCookie()
         );
+        check_register ? setIsLogin(true) : setIsLogin(false)
     }
     
     return (

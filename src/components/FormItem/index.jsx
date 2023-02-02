@@ -26,16 +26,15 @@ export default function FormItem({ title, button, btn_link }) {
             // console.log('Login');
             login(
                 auth_data,
-                token_value =>
-                {
+                token_value => {
                     setCookie(AUTH_TOKEN_REFRESH, token_value.refresh, AUTH_TOKEN_ACCESS, token_value.access);
                     setMessage('Ok!');
                     password.value = '';
                     email.value = '';
-                    setIsLogin(true);
                 },
                 setMessage
             );
+            login ? setIsLogin(true) : setIsLogin(false);
             
 
         } else if (button.submit === 'Registration') {
@@ -47,10 +46,11 @@ export default function FormItem({ title, button, btn_link }) {
                     setMessage('Ok! User registered!');
                     password.value = '';
                     email.value = '';
-                    setIsLogin(true);
+                    // setIsLogin(true);
                 },
                 setMessage
             );
+            register ? setIsLogin(true) : setIsLogin(false);
         }
         
     }

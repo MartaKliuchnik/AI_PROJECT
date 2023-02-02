@@ -20,10 +20,11 @@ export const check_register = (auth_token) => {
             throw new Error(`${res.statusText}`)
         }
     }).then(
-        data =>
-            // {
-            console.log(data),
-        // },
+        data => {
+            console.log(data);
+            console.log('true')
+            return true
+        },
         err => console.log(err.message)
     );
 }

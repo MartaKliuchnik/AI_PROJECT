@@ -1,11 +1,17 @@
 import React from 'react'
+import Button from '../UI/Button';
 import s from './style.module.sass';
 
 export default function WelcomText() {
   return (
-    <div className={s.text_welcome_section}>
-        <h1>Effortlessly analyze customer feedback with ... - AI-powered insights at your fingertips</h1>
-        
-    </div>
+    <section className={s.welcome_section}>
+        <div className={s.block_why}>
+          <h1>Effortlessly analyze customer feedback with ... - AI-powered insights at your fingertips</h1>
+          <p>"Understanding Your Customers through Review Analysis
+            As a business, it's crucial to know what your customers think about your products or services. This information can help you identify areas for improvement, as well as what you're doing right. One of the best ways to gather this information is by analyzing customer reviews."
+          </p>
+          <Button>Read more</Button>
+        </div>   
+    </section>
   )
 }

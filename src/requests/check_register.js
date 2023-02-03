@@ -1,7 +1,6 @@
 import { token_refresh } from "./token_refresh";
 
 export const check_register = (auth_token) => {
-    console.log(auth_token);
     
     fetch('http://localhost:8000/api/users/me/', {
         method: 'GET',
@@ -21,10 +20,14 @@ export const check_register = (auth_token) => {
         }
     }).then(
         data => {
-            console.log(data);
-            console.log('true')
+            // console.log(data);
+            console.log('check_register = true');
             return true
         },
-        err => console.log(err.message)
+        err => {
+            console.log(err.message);
+            console.log('check_register = false');
+            return false
+        }
     );
 }

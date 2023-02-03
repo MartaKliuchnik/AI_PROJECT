@@ -1,8 +1,5 @@
-import { check_register } from "./check_register";
-
 export const login = (auth_data, callback, err_callback = console.log) => {
     // console.log('Process - Login')
-
     fetch('http://localhost:8000/api/token/', {
         method: 'POST',
         headers: {
@@ -19,7 +16,6 @@ export const login = (auth_data, callback, err_callback = console.log) => {
         }
     }).then(
         data => {
-            console.log(data)
             callback(data);
             return true
         },

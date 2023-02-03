@@ -25,7 +25,5 @@ export const findCookie = () => {
         access: (result_access && result_access[1] !== '-1') ? result_access[1] : undefined,
         refresh: (result_refresh && result_refresh[1] !== '-1') ? result_refresh[1] : undefined
     }
-
-    console.log(auth_token_from_cookies)
     return auth_token_from_cookies
 }

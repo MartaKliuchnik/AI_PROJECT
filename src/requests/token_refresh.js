@@ -1,4 +1,3 @@
-import { check_register } from "./check_register";
 import { setCookie, AUTH_TOKEN_ACCESS, AUTH_TOKEN_REFRESH } from '../requests/cookie_tools';
 
 // export const token_refresh = (auth_refresh) => {
@@ -17,9 +16,13 @@ export const token_refresh = (token) => {
         return res.json()
     }).then(
         data => {
-            console.log(data);
+            console.log('token_refresh = true');
             setCookie(AUTH_TOKEN_REFRESH, data.refresh, AUTH_TOKEN_ACCESS, data.access);
-            // check_register(data)
+        },
+        err => {
+            console.log('token_refresh = false');
+            console.log(err.message);
+            return false
         }
     )
 }

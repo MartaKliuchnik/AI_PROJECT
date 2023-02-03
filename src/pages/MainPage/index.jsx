@@ -1,13 +1,18 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import CheckRegisterButton from '../../components/UI/CheckRegisterButton';
 import FormInput from '../../components/UI/FormInput';
 import s from './style.module.sass';
-import {check_register} from '../../requests/check_register'
+import { check_register } from '../../requests/check_register';
+import { token_refresh } from '../../requests/token_refresh';
 import { findCookie } from '../../requests/cookie_tools';
 import { Context } from '../../context';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function MainPage() {
     const { setIsLogin } = useContext(Context);
+    const navigate = useNavigate();
+	const goLoginPage = () => navigate('/login_form');
 
     const submit = event => {
         event.preventDefault();
@@ -15,7 +20,10 @@ export default function MainPage() {
         check_register(
             findCookie()
         );
-        check_register ? setIsLogin(true) : setIsLogin(false)
+        check_register ? setIsLogin(true) : setIsLogin(false);
+        if (!check_register || !token_refresh) {
+            goLoginPage();
+        }
     }
     
     return (

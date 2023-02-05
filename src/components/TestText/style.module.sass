@@ -1,34 +1,81 @@
-
 .analyse_text_form
+    margin-top: 10px 
     display: flex
     flex-direction: column
     align-items: center
-    // box-shadow: 0px 4px 30px 10px rgb(246, 243, 243)
-    // background-color: rgb(179, 185, 186)
-    padding: 30px 120px
-    background-color:   rgb(230, 232, 233)
-
-
-.block_without_button 
-    padding: 20px
+    height: 700px
+    padding: 20px 30px
     display: flex
-    gap: 20px
-    width: 100%
-    
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    gap: 30px
+    h2
+        font-weight: 600
+        font-size: 60px
+        text-align: center
+        color: #e68020
+        text-shadow: -1px -1px 0px #3E2768
+    // background-color: rgb(179, 185, 186)
+    // background-color:   rgb(230, 232, 233)
+    // background: radial-gradient(50% 50% at 50% 50%, rgba(67, 112, 154, 0.55) 0%, rgba(58, 92, 95, 0) 100%)
+    .block_with_button 
+        padding: 20px
+        display: flex
+        gap: 20px
+        width: 80%
+        height: 75%
+        border-radius: 20px
+        border: 2px solid #3E2768
+
 .input_text_block 
     width: 50% 
 
+.input_text_block
+    padding: 30px 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+    .subheader
+        display: flex
+        width: 100%
+        justify-content: space-between
+        button
+            background-color:#f8c362
+            border-radius: 50px
+            border: 1px solid #3E2768
+            color: #3E2768
+            width: 60px
+            height: 40px
+            cursor: pointer
+            &:hover
+                background-color: #ea9834
+        label
+            color: #3E2768
+            font-size: 25px
+            font-weight: 700
 .input_text_block textarea 
     height: 300px
     width: 100%
     margin-top: 20px
+    border: none
+    box-shadow: 0px 4px 30px 10px rgb(246, 243, 243)
     border-radius: 20px
     padding: 10px
     font-size: 18px
     resize: none
 
 .results
+    padding: 30px 10px
+    display: flex
+    flex-direction: column
+    align-items: center
     margin: 0 auto
+    label
+        color: #3E2768
+        font-size: 25px
+        font-weight: 700
 
 .results_text 
     margin-top: 20px

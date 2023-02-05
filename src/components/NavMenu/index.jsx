@@ -2,37 +2,37 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './style.module.sass';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
-import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
-import { deleteCookie, AUTH_TOKEN_REFRESH, AUTH_TOKEN_ACCESS } from '../../requests/cookie_tools';
 import { Context } from '../../context';
-import { useNavigate } from 'react-router-dom';
-
+import Button from '../UI/Button';
 
 export default function NavMenu() {
-    const classActive = ({ isActive }) => isActive ? s.active : '';
-    const { isLogin, setIsLogin } = useContext(Context);
+	const classActive = ({ isActive }) => (isActive ? s.active : '');
+	const { isLogin } = useContext(Context);
 
-    const navigate = useNavigate();
-	const goWelcomePage = () => navigate('/');
+	return (
+		<nav className={s.nav_menu}>
+			<div className={s.icons_container}>
+				<h1>your <span style={{ fontWeight: 800, textShadow: '-1px -1px 0px #3E2768' }}>analyzer</span></h1>
+			</div>
 
-    const deleteToken = () => {
-        setIsLogin(false);
-        deleteCookie(AUTH_TOKEN_REFRESH, AUTH_TOKEN_ACCESS);
-        goWelcomePage();
-    }
-
-    return (
-        <nav className={s.nav_menu}>
-            <NavLink className={classActive} to='/login_form'><HowToRegIcon/></NavLink>
-            <NavLink className={classActive} to='/'>Welcome Page</NavLink>
-            {
-                isLogin
-                ? <NavLink className={classActive} to='/main'>Main</NavLink>
-                : ''
-            }
-            <button onClick={deleteToken}>
-                <NavLink className={classActive} to='/'><MeetingRoomIcon/></NavLink>
-            </button>
-        </nav>
-    )
+			<div className={s.nav_container}>
+            <NavLink className={classActive} to='/about_us'>About us</NavLink>
+				<NavLink className={classActive} to='/'>
+					Welcome Page
+				</NavLink>
+				{isLogin ? (
+					<NavLink className={classActive} to='/main'>
+						Main
+					</NavLink>
+				) : (
+					''
+                )}
+				
+                <NavLink className={[classActive, s.btn_login].join(' ')} to='/login_form'>
+                        {/* <HowToRegIcon /> */}
+                    <Button>Get Started</Button> 
+                </NavLink>
+			</div>
+		</nav>
+	);
 }

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import s from './style.module.sass';
 import picture_example_1 from './media/image_1.png';
 import Button from '../UI/Button';
+import { Context } from '../../context';
+import { Link } from 'react-router-dom';
+
 
 export default function InfoBlock() {
+    const { isLogin } = useContext(Context);
+    const check_register = isLogin ? '/main' : '/registration_form';
+
     return (
         <div className={s.wrapper}>
             <h2>Your Analyzer - solution for <br/>various fields</h2>
@@ -16,7 +22,9 @@ export default function InfoBlock() {
                     <img src={picture_example_1} alt="example_1" />
                 </div>
             </div>
-            <Button>Get Started</Button> 
+            <Link to={check_register}>
+                <Button>Get Started</Button> 
+            </Link>
         </div>
     )
 }

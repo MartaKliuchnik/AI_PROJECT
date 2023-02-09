@@ -26,11 +26,13 @@ export default function NavMenu() {
 					</NavLink>
 				) : (
 					''
-                )}
+				)}
 				
-                <NavLink className={[classActive, s.btn_login].join(' ')} to='/login_form'>
+				<NavLink className={classActive} to='/login_form'>Sign in</NavLink>
+				
+                <NavLink className={[classActive, s.btn_login].join(' ')} to='/registration_form'>
                         {/* <HowToRegIcon /> */}
-                    <Button>Get Started</Button> 
+                    <Button>Register</Button> 
                 </NavLink>
 			</div>
 		</nav>

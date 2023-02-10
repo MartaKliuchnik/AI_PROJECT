@@ -7,7 +7,7 @@ import LoginPage from "../../pages/LoginPage";
 import RegistrationPage from "../../pages/RegistrationPage";
 import { Context } from '../../context';
 import AboutUsPage from '../../pages/AboutUsPage';
-import FreeAnalysis from '../../pages/FreeAnalysis';
+import FreeAnalysisPage from '../../pages/FreeAnalysisPage';
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
@@ -24,7 +24,7 @@ function App() {
           <Route path='/registration_form' element={<RegistrationPage />} />
           <Route path='/login_form' element={<LoginPage />} />
           <Route path='/about_us' element={<AboutUsPage />} />
-          <Route path='/free_analysis' element={<FreeAnalysis />} />
+          <Route path='/free_analysis' element={<FreeAnalysisPage />} />
           <Route path='/main' element={<MainPage />} />
         </Route>
       </Routes>

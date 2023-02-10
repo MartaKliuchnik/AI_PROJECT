@@ -16,7 +16,7 @@ export default function MiniBlockAboutPtoject() {
                     </div>
                 
                     <Link to='/free_analysis' className={s.free_btn}>
-                        <Button>Get analysis</Button>
+                        <Button>Start free analysis</Button>
                     </Link>
                 
                     <div className={s.free_hero_image}>

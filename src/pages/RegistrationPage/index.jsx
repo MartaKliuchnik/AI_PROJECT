@@ -9,7 +9,7 @@ import {
 	AUTH_TOKEN_REFRESH,
 	AUTH_TOKEN_ACCESS,
 } from '../../requests/cookie_tools';
-import picture from '../LoginPage/media/analysis.png'
+import picture from './media/auth.png'
 
 export default function RegistrationPage() {
     const { setIsLogin } = useContext(Context);

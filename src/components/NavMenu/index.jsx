@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './style.module.sass';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
 import { Context } from '../../context';
 import Button from '../UI/Button';
 
@@ -12,7 +11,9 @@ export default function NavMenu() {
 	return (
 		<nav className={s.nav_menu}>
 			<div className={s.icons_container}>
-				<h1>your <span style={{ fontWeight: 800, textShadow: '-1px -1px 0px #3E2768' }}>analyzer</span></h1>
+				<NavLink className={classActive} to='/'>
+					<h1>your <span style={{ fontWeight: 800, textShadow: '-1px -1px 0px #3E2768' }}>analyzer</span></h1>
+				</NavLink>
 			</div>
 
 			<div className={s.nav_container}>
@@ -31,8 +32,7 @@ export default function NavMenu() {
 				<NavLink className={classActive} to='/login_form'>Sign in</NavLink>
 				
                 <NavLink className={[classActive, s.btn_login].join(' ')} to='/registration_form'>
-                        {/* <HowToRegIcon /> */}
-                    <Button>Register</Button> 
+                    <Button style={{width: '170px'}}>Register</Button> 
                 </NavLink>
 			</div>
 		</nav>

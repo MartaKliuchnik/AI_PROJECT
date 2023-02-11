@@ -4,6 +4,7 @@ import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import Button from '../../components/UI/Button';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context';
+import ai_icon from '../../pages/FreeAnalysisPage/media/ai_image.png';
 
 export default function TestText() {
   const { isLogin } = useContext(Context);
@@ -37,6 +38,10 @@ export default function TestText() {
                 <p className={s.results_text}></p>
               </div>
             </div>
+      </div>
+
+      <div className={s.ai_container}>
+        <img src={ai_icon} alt="ai_image" />
       </div>
 
     </div>

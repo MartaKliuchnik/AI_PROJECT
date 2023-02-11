@@ -6,13 +6,23 @@
     display: flex
     flex-direction: column
     align-items: center
-    gap: 40px
+    // gap: 40px
     h2
         padding: 30px
         font-weight: 900
         font-size: 80px
         text-align: center
         color: #3E2768
+    .ai_container
+        position: absolute
+        height: 50%
+        top: 90px
+        right: -150px
+        z-index: 0
+        &>img
+            width: 100%
+            height: 100%
+            object-fit: contain
     .analyse_block
         display: flex
         width: 70%
@@ -21,10 +31,12 @@
         gap: 30px
         border-radius: 20px
         color: #3E2768
+        z-index: 1
+        margin-bottom: 60px
         .analyse_text_form
-            padding: 40px 30px
+            padding: 60px 30px
             width: 100%
-            height: 100%
+            margin-top: 50px 
             display: flex
             flex-direction: column
             align-items: center
@@ -78,6 +90,7 @@
         border-radius: 20px
         color: #3E2768
         background: linear-gradient(to right, rgba(236, 236, 247, 0.7),rgba(241, 241, 248, 0.7))
+        z-index: 1
         .subheader
             padding: 40px 30px
             display: flex
@@ -111,9 +124,11 @@
                 overflow-y: scroll
     .info_block
         display: flex
-        gap: 20px
+        gap: 60px
         align-items: center
+        z-index: 1
+        margin: 40px
         &>p
             color: #3E2768
-            font-weight: 500
-            font-size: 25px
+            font-weight: 700
+            font-size: 35px

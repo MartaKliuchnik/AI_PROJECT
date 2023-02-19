@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './style.module.sass';
 import { Context } from '../../context';
-import Button from '../UI/Button';
+import {Button} from '../UI/Button';
 
 export default function NavMenu() {
 	const classActive = ({ isActive }) => (isActive ? s.active : '');

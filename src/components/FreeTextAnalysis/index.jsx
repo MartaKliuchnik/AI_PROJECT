@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import s from './style.module.sass';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
-import Button from '../../components/UI/Button';
+import { Button }  from '../../components/UI/Button';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context';
 import ai_icon from '../../pages/FreeAnalysisPage/media/ai_image.png';

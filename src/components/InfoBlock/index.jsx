@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import s from './style.module.sass';
 import picture_example from './media/image_3.png';
-import Button from '../UI/Button';
+import { Button } from '../UI/Button';
 import { Context } from '../../context';
 import { Link } from 'react-router-dom';
 

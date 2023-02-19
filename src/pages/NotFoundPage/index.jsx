@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import s from './style.module.sass';
 import icon_error from './media/404_error.png';
-import Button from '../../components/UI/Button';
+import {Button} from '../../components/UI/Button';
 
 export default function NotFoundPage() {
     return (

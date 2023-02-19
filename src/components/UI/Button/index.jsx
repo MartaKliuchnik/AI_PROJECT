@@ -1,10 +1,14 @@
 import React from 'react';
+import { forwardRef } from 'react';
 import s from './style.module.sass';
+import { motion } from 'framer-motion';
 
-export default function Button({ children, ...props }) {
+export const Button = forwardRef(({ children, ...props }, ref) => {
   return (
-    <button className={s.btn} {...props}>
+    <button ref={ref} className={s.btn} {...props}>
         { children }
     </button>
   )
-}
+})
+
+export const MButton = motion(Button);

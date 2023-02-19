@@ -1,12 +1,16 @@
-import React from 'react'
-import TestText from '../../components/TestText'
-import WelcomText from '../../components/WelcomText'
+import React from 'react';
+import InfoBlock from '../../components/InfoBlock';
+import WelcomText from '../../components/WelcomText';
+import MiniBlockAboutPtoject from '../../components/MiniBlockAboutPtoject';
+import EasySteps from '../../components/EasySteps';
 
 export default function WelcomePage() {
     return (
         <div>
+            <MiniBlockAboutPtoject />
+            <EasySteps/>
             <WelcomText />
-            <TestText />
+            <InfoBlock/>
         </div>
     )
 }

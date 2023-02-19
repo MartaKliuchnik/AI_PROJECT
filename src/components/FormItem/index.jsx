@@ -16,7 +16,6 @@ export default function FormItem({ title, button, btn_link }) {
 
     const navigate = useNavigate();
 	const goMainPage = () => navigate('/main');
-	const goLoginPage = () => navigate('/login_form');
     
     
     const submit = (event) => {
@@ -75,9 +74,9 @@ export default function FormItem({ title, button, btn_link }) {
                     />
                 </div>
 
-                <p>{message}</p>
+                <p style={{color: '#3E2768'}}>{message}</p>
                 <div>
-                    <FormButton color='grey'>{button.submit}</FormButton>
+                    <FormButton color='orange'>{button.submit}</FormButton>
                     <Link to={btn_link}>
                         <FormButton color='white'>{button.redirect}</FormButton>
                     </Link>

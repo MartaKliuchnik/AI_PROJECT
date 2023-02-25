@@ -18,8 +18,7 @@ export default function TestText() {
     const request_text = {
       "text": users_text.value
     };
-    console.log(users_text.value);
-    // check_free_result(request_text);
+    
     check_free_result(
       request_text,
       response => setResultAnalysis(response)

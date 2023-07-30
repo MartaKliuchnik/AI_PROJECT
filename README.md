@@ -1,3 +1,19 @@
+![ai_analyzer](https://github.com/MartaKliuchnik/AI_PROJECT/assets/101942611/279b7d15-e582-4ba5-bcde-b6d7b1551d15)
+
+**AI Analyzer**
+
+This text analysis tool is designed to revolutionize the way you understand your written content. By employing algorithms, it swiftly identifies crucial information within the text and provides you with precise numeric results regarding the emotional tone of your content, be it positive or negative.
+
+With "Your Analyzer", you can now unlock valuable insights from your text, whether it's a social media post, customer feedback, or any written communication.
+
+Used web-technologies:
+- HTML, CSS (SASS)
+- Javascript
+- React (React-router-dom, React Hook, Material UI)
+- Redux (Redux-thunk)
+
+link: https://ai-analyzer.onrender.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

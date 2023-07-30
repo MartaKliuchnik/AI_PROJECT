@@ -17,7 +17,7 @@ export default function NavMenu() {
 			</div>
 
 			<div className={s.nav_container}>
-            <NavLink className={classActive} to='/about_us'>About us</NavLink>
+            {/* <NavLink className={classActive} to='/about_us'>About us</NavLink> */}
 				<NavLink className={classActive} to='/'>
 					Welcome Page
 				</NavLink>
